@@ -50,7 +50,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
 				if "87" == message.Text{
-					 linebot.NewTextMessage("你才"+message.Text+",你全家都"+message.Text+"!!")).Do();
+					 linebot.NewTextMessage("你才"+message.Text+",你全家都"+message.Text+"!!").Do();
 				}
 				if "怕" == message.Text{
 					linebot.NewImageMessage("https://assets.iask.tw/attachment/image/x57f7622b270389d42d8b456b.pagespeed.ic.JJRdnJizh2.jpg","https://assets.iask.tw/attachment/image/x57f7622b270389d42d8b456b.pagespeed.ic.JJRdnJizh2.jpg").Do();
