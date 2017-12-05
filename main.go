@@ -49,8 +49,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你才"+message.Text+",你全家都"+message.Text+"!!")).Do(); err != nil {
-					log.Print(err)
+				if "87" == message.Text{
+					 linebot.NewTextMessage("你才"+message.Text+",你全家都"+message.Text+"!!")).Do();
+				}
+				if "怕" == message.Text{
+					linebot.NewImageMessage("https://assets.iask.tw/attachment/image/x57f7622b270389d42d8b456b.pagespeed.ic.JJRdnJizh2.jpg","https://assets.iask.tw/attachment/image/x57f7622b270389d42d8b456b.pagespeed.ic.JJRdnJizh2.jpg").Do();
 				}
 			}
 		}
