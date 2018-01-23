@@ -55,6 +55,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if "怕" == message.Text{
 					 bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://assets.iask.tw/attachment/image/x57f7622b270389d42d8b456b.pagespeed.ic.JJRdnJizh2.jpg","https://assets.iask.tw/attachment/image/x57f7622b270389d42d8b456b.pagespeed.ic.JJRdnJizh2.jpg")).Do();;
 				}
+				if "查ID" == message.Text{
+					 bot.ReplyMessage(event.ReplyToken,  linebot.NewTextMessage("你的 LineId 是"+message.ID)).Do();
+				}
 			}
 		}
 	}
